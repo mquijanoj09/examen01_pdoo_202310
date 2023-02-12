@@ -1,0 +1,15 @@
+/Users/mquijanoj/Projects/FumigadorHogares/FumigadorHogares/bin/Debug/net7.0/FumigadorHogares
+/Users/mquijanoj/Projects/FumigadorHogares/FumigadorHogares/bin/Debug/net7.0/FumigadorHogares.deps.json
+/Users/mquijanoj/Projects/FumigadorHogares/FumigadorHogares/bin/Debug/net7.0/FumigadorHogares.runtimeconfig.json
+/Users/mquijanoj/Projects/FumigadorHogares/FumigadorHogares/bin/Debug/net7.0/FumigadorHogares.dll
+/Users/mquijanoj/Projects/FumigadorHogares/FumigadorHogares/bin/Debug/net7.0/FumigadorHogares.pdb
+/Users/mquijanoj/Projects/FumigadorHogares/FumigadorHogares/obj/Debug/net7.0/FumigadorHogares.csproj.AssemblyReference.cache
+/Users/mquijanoj/Projects/FumigadorHogares/FumigadorHogares/obj/Debug/net7.0/FumigadorHogares.GeneratedMSBuildEditorConfig.editorconfig
+/Users/mquijanoj/Projects/FumigadorHogares/FumigadorHogares/obj/Debug/net7.0/FumigadorHogares.AssemblyInfoInputs.cache
+/Users/mquijanoj/Projects/FumigadorHogares/FumigadorHogares/obj/Debug/net7.0/FumigadorHogares.AssemblyInfo.cs
+/Users/mquijanoj/Projects/FumigadorHogares/FumigadorHogares/obj/Debug/net7.0/FumigadorHogares.csproj.CoreCompileInputs.cache
+/Users/mquijanoj/Projects/FumigadorHogares/FumigadorHogares/obj/Debug/net7.0/FumigadorHogares.dll
+/Users/mquijanoj/Projects/FumigadorHogares/FumigadorHogares/obj/Debug/net7.0/refint/FumigadorHogares.dll
+/Users/mquijanoj/Projects/FumigadorHogares/FumigadorHogares/obj/Debug/net7.0/FumigadorHogares.pdb
+/Users/mquijanoj/Projects/FumigadorHogares/FumigadorHogares/obj/Debug/net7.0/FumigadorHogares.genruntimeconfig.cache
+/Users/mquijanoj/Projects/FumigadorHogares/FumigadorHogares/obj/Debug/net7.0/ref/FumigadorHogares.dll
