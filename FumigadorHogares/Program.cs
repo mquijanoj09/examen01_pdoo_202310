@@ -31,6 +31,17 @@ namespace FumigadorHogares
                 }
             }
             while (cantidadHogaresCorrecta == false);
+
+            Fabrica fabricaDeFumigadores = new Fabrica(cantidadHogares);
+
+            int contadorFumigadores = 1;
+
+            foreach (Fumigador unFumigador in fabricaDeFumigadores.GetLosFumigadores())
+            {
+                Console.WriteLine($"No. {contadorFumigadores}\n{unFumigador.ToString()}\n");
+                contadorFumigadores++;
+            }
         }
+
     }
 }
