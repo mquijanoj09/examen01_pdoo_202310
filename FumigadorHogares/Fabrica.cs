@@ -4,6 +4,8 @@ namespace FumigadorHogares
     public class Fabrica
     {
         private int cantidad;
+        private int sumaHogaresFumigados;
+        private float porcentajeHogaresFumigados;
         private string[] tipoDeProductoRoedores;
         private string[] tipoDeProductoInsectos;
         private string[] tipoDeProductoHongos;
@@ -13,6 +15,8 @@ namespace FumigadorHogares
         public Fabrica()
         {
             cantidad = 0;
+            porcentajeHogaresFumigados = 0f;
+            sumaHogaresFumigados = 0;
             tipoDeProductoRoedores = AsignaTipoDeProductoRoedores();
             tipoDeProductoInsectos = AsignaTipoDeProductoInsectos();
             tipoDeProductoHongos = AsignaTipoDeProductoHongos();
@@ -24,6 +28,8 @@ namespace FumigadorHogares
         public Fabrica(int cantidad)
         {
             this.cantidad = cantidad;
+            porcentajeHogaresFumigados = 0f;
+            sumaHogaresFumigados = 0;
             tipoDeProductoRoedores = AsignaTipoDeProductoRoedores();
             tipoDeProductoInsectos = AsignaTipoDeProductoInsectos();
             tipoDeProductoHongos = AsignaTipoDeProductoHongos();
@@ -36,39 +42,44 @@ namespace FumigadorHogares
             if (cantidad == 0)
                 cantidad = 1000;
 
-            //Creamos el arreglo de arepas
+            //Creamos el arreglo de fumigadores
             Fumigador[] arregloFumigadores = new Fumigador[cantidad];
 
             Random aleatorio = new Random();
             int tipoDePlaga = 0;
+            bool estaFumigado = false;
 
-            //Inicializamos cada posicion del arreglo de arepas
-            //con una arepa de tipo aleatorio
 
             for (int i = 0; i < arregloFumigadores.Length; i++)
             {
-                //0: Roedores, 1: Congelada, 2: Procesada
+                //0: Roedores, 1: Insectos, 2: Hongos
                 tipoDePlaga = aleatorio.Next(3);
+                estaFumigado = fueFumigada[aleatorio.Next(fueFumigada.Length)];
 
                 switch (tipoDePlaga)
                 {
                     case 0:
                         arregloFumigadores[i] = new Roedores("Roedores",
-                            fueFumigada[aleatorio.Next(fueFumigada.Length)],
+                            estaFumigado,
                             tipoDeProductoRoedores[aleatorio.Next(tipoDeProductoRoedores.Length)]);
+                        ContabilizaHogaresFumigados(estaFumigado);
                         break;
                     case 1:
                         arregloFumigadores[i] = new Insectos("Insectos",
-                            fueFumigada[aleatorio.Next(fueFumigada.Length)],
+                            estaFumigado,
                             tipoDeProductoInsectos[aleatorio.Next(tipoDeProductoInsectos.Length)]);
+                        ContabilizaHogaresFumigados(estaFumigado);
                         break;
                     case 2:
+                        
                         arregloFumigadores[i] = new Hongos("Hongos",
-                            fueFumigada[aleatorio.Next(fueFumigada.Length)],
+                            estaFumigado,
                             tipoDeProductoHongos[aleatorio.Next(tipoDeProductoHongos.Length)]);
+                        ContabilizaHogaresFumigados(estaFumigado);
                         break;
-                }
+                } 
             }
+            ObtienePorcentajeHogaresFumigados();
             return arregloFumigadores;
         }
 
@@ -117,7 +128,24 @@ namespace FumigadorHogares
                 true,
                 false
             };
+
             return arregloSiEsFumigada;
+        }
+
+        private void ContabilizaHogaresFumigados(bool estaFumigado)
+        {
+            if (estaFumigado)
+            sumaHogaresFumigados++;
+        }
+
+        private void ObtienePorcentajeHogaresFumigados()
+        {
+            porcentajeHogaresFumigados = (float) sumaHogaresFumigados / cantidad * 100;
+        }
+
+        public float GetPorcentajeHogaresFumigados()
+        {
+            return porcentajeHogaresFumigados;
         }
     }
 }

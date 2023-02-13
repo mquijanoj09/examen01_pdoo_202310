@@ -41,6 +41,8 @@ namespace FumigadorHogares
                 Console.WriteLine($"No. {contadorFumigadores}\n{unFumigador.ToString()}\n");
                 contadorFumigadores++;
             }
+
+            Console.WriteLine($"De este lote de hogares, se fumigo un: {fabricaDeFumigadores.GetPorcentajeHogaresFumigados().ToString("00.00")}%");
         }
 
     }
