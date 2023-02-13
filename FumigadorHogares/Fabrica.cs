@@ -3,13 +3,13 @@ namespace FumigadorHogares
 {
     public class Fabrica
     {
-        private int cantidad;
-        private int sumaHogaresFumigados;
+        private int cantidad, sumaHogaresFumigados;
         private float porcentajeHogaresFumigados;
         private string[] tipoDeProductoRoedores;
         private string[] tipoDeProductoInsectos;
         private string[] tipoDeProductoHongos;
         private bool[] fueFumigada;
+        private string[] arregloPlagas;
         private Fumigador[] losFumigadores;
 
         public Fabrica()
@@ -22,6 +22,7 @@ namespace FumigadorHogares
             tipoDeProductoHongos = AsignaTipoDeProductoHongos();
             fueFumigada = AsignaSiEsFumigada();
             losFumigadores = AsignaFumigadores();
+            arregloPlagas = AsignaPlagas();
 
         }
 
@@ -35,6 +36,7 @@ namespace FumigadorHogares
             tipoDeProductoHongos = AsignaTipoDeProductoHongos();
             fueFumigada = AsignaSiEsFumigada();
             losFumigadores = AsignaFumigadores();
+            arregloPlagas = AsignaPlagas();
         }
 
         private Fumigador[] AsignaFumigadores()
@@ -59,22 +61,22 @@ namespace FumigadorHogares
                 switch (tipoDePlaga)
                 {
                     case 0:
-                        arregloFumigadores[i] = new Roedores("Roedores",
+                        arregloFumigadores[i] = new Roedores(estaFumigado ? "Roedores": "",
                             estaFumigado,
-                            tipoDeProductoRoedores[aleatorio.Next(tipoDeProductoRoedores.Length)]);
+                            estaFumigado?tipoDeProductoRoedores[aleatorio.Next(tipoDeProductoRoedores.Length)]: "");
                         ContabilizaHogaresFumigados(estaFumigado);
                         break;
                     case 1:
-                        arregloFumigadores[i] = new Insectos("Insectos",
+                        arregloFumigadores[i] = new Insectos(estaFumigado ? "Insectos": "",
                             estaFumigado,
-                            tipoDeProductoInsectos[aleatorio.Next(tipoDeProductoInsectos.Length)]);
+                            estaFumigado ? tipoDeProductoInsectos[aleatorio.Next(tipoDeProductoInsectos.Length)]: "");
                         ContabilizaHogaresFumigados(estaFumigado);
                         break;
                     case 2:
                         
-                        arregloFumigadores[i] = new Hongos("Hongos",
+                        arregloFumigadores[i] = new Hongos(estaFumigado ? "Hongos": "",
                             estaFumigado,
-                            tipoDeProductoHongos[aleatorio.Next(tipoDeProductoHongos.Length)]);
+                            estaFumigado ? tipoDeProductoHongos[aleatorio.Next(tipoDeProductoHongos.Length)]: "");
                         ContabilizaHogaresFumigados(estaFumigado);
                         break;
                 } 
@@ -86,6 +88,17 @@ namespace FumigadorHogares
         public Fumigador[] GetLosFumigadores()
         {
             return losFumigadores;
+        }
+
+        private string[] AsignaPlagas()
+        {
+            string[] arregloPlagas =
+            {
+                "Roedores",
+                "Insectos",
+                "Hongos"
+            };
+            return arregloPlagas;
         }
 
         private string[] AsignaTipoDeProductoRoedores()
@@ -146,6 +159,88 @@ namespace FumigadorHogares
         public float GetPorcentajeHogaresFumigados()
         {
             return porcentajeHogaresFumigados;
+        }
+
+        public ProductoModa ObtieneProductoModa()
+        {
+            ProductoModa productoResultado = ObtieneProductoPlagaMasUtilizado(losFumigadores, arregloPlagas);
+            return productoResultado;
+        }
+
+        public ProductoModa ObtieneProductoPlagaMasUtilizado(Fumigador[] arregloFumigadores, string[] arregloPlagas)
+        {
+            int[] contadorProductos = new int[arregloPlagas.Length];
+            for (int i = 0; i < contadorProductos.Length; i++)
+                contadorProductos[i] = 0;
+
+            for (int i = 0; i < arregloPlagas.Length; i++)
+            {
+                for (int j = 0; j < arregloFumigadores.Length; j++)
+                {
+                
+                    if (arregloPlagas[i] == arregloFumigadores[j].GetTipoDePlaga())
+                        contadorProductos[i]++;
+                }
+            }
+
+            int valorMayor = contadorProductos[0];
+            int posicionMayor = 0;
+
+            for (int i = 0; i < contadorProductos.Length; i++)
+            {
+                if (contadorProductos[i] > valorMayor)
+                {
+                    valorMayor = contadorProductos[i];
+                    posicionMayor = i;
+                }
+            }
+
+            string[] arregloPlagasProductos= new string[3];
+
+            switch (posicionMayor)
+            {
+                case 0:
+                    arregloPlagasProductos = AsignaTipoDeProductoRoedores();
+                    break;
+                case 1:
+                    arregloPlagasProductos = AsignaTipoDeProductoInsectos();
+                    break;
+                case 2:
+                    arregloPlagasProductos = AsignaTipoDeProductoHongos();
+                    break;
+            }
+
+            int[] contadorProductosPlagas = new int[arregloPlagasProductos.Length];
+            for (int i = 0; i < contadorProductosPlagas.Length; i++)
+                contadorProductosPlagas[i] = 0;
+
+            for (int i = 0; i < arregloPlagasProductos.Length; i++)
+            {
+                for (int j = 0; j < arregloFumigadores.Length; j++)
+                   
+                {
+                    if (arregloPlagasProductos[i] == arregloFumigadores[j].GetTipoDeProducto())
+                        contadorProductosPlagas[i]++;
+                }
+            }
+
+            int valorMayorPlaga = contadorProductosPlagas[0];
+            int posicionMayorPlaga = 0;
+
+            for (int i = 0; i < contadorProductosPlagas.Length; i++)
+            {
+                if (contadorProductosPlagas[i] > valorMayorPlaga)
+                {
+                    valorMayorPlaga = contadorProductosPlagas[i];
+                    posicionMayorPlaga = i;
+                }
+            }
+            ProductoModa productoResultado = new ProductoModa();
+
+            productoResultado.SetTipoDeProducto(arregloPlagasProductos[posicionMayorPlaga]);
+            productoResultado.SetTipoDePlaga(arregloPlagas[posicionMayor]);
+
+            return productoResultado;
         }
     }
 }

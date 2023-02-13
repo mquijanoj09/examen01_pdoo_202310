@@ -43,6 +43,10 @@ namespace FumigadorHogares
             }
 
             Console.WriteLine($"De este lote de hogares, se fumigo un: {fabricaDeFumigadores.GetPorcentajeHogaresFumigados().ToString("00.00")}%");
+
+            ProductoModa ProductoModa = fabricaDeFumigadores.ObtieneProductoModa();
+            Console.WriteLine($"La plaga contra la que mas se fumigo, fue contra {ProductoModa.GetTipoDePlaga()}. Con el producto {ProductoModa.GetTipoDeProducto()}");
+
         }
 
     }

@@ -1,21 +1,15 @@
 ﻿<Properties StartupConfiguration="{ECEF01C9-0A67-4CFF-9E70-0201B812FEE7}|Default">
-  <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="FumigadorHogares/Fumigador.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="FumigadorHogares/Fabrica.cs">
     <Files>
-      <File FileName="FumigadorHogares/Program.cs" Line="11" Column="1" />
-      <File FileName="FumigadorHogares/Fumigador.cs" Line="44" Column="1" />
+      <File FileName="FumigadorHogares/Program.cs" Line="27" Column="19" />
+      <File FileName="FumigadorHogares/Fumigador.cs" Line="39" Column="10" />
       <File FileName="FumigadorHogares/IRoedores.cs" Line="10" Column="1" />
-      <File FileName="FumigadorHogares/Roedores.cs" Line="36" Column="40" />
-      <File FileName="FumigadorHogares/IInsectos.cs" Line="6" Column="39" />
-      <File FileName="FumigadorHogares/Insectos.cs" Line="36" Column="40" />
-      <File FileName="FumigadorHogares/IHongos.cs" Line="10" Column="1" />
-      <File FileName="FumigadorHogares/Hongos.cs" Line="36" Column="42" />
-      <File FileName="FumigadorHogares/Fabrica.cs" Line="7" Column="49" />
+      <File FileName="FumigadorHogares/Roedores.cs" Line="30" Column="43" />
+      <File FileName="FumigadorHogares/IInsectos.cs" />
+      <File FileName="FumigadorHogares/Insectos.cs" />
+      <File FileName="FumigadorHogares/IHongos.cs" />
+      <File FileName="FumigadorHogares/Hongos.cs" />
+      <File FileName="FumigadorHogares/Fabrica.cs" Line="152" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -25,7 +19,16 @@
           </Node>
         </State>
       </Pad>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State />
+      </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.ItemProperties.FumigadorHogares PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
 </Properties>

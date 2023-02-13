@@ -3,33 +3,20 @@ namespace FumigadorHogares
 {
 	public class Roedores : Fumigador, IRoedores
 	{
-        private string tipoDeProductoRoedores;
-
         public Roedores() : base()
-		{
-            tipoDeProductoRoedores = "";
-        }
+        { }
 
         public Roedores(string tipoDePlaga, bool obtuvoFumigacion, string tipoDeProductoRoedores)
         {
             this.tipoDePlaga = tipoDePlaga;
             this.obtuvoFumigacion = obtuvoFumigacion;
-            this.tipoDeProductoRoedores = tipoDeProductoRoedores;
+            this.tipoDeProducto = tipoDeProductoRoedores;
         }
 
-        public string GetTipoDeProductoRoedores()
-        {
-            return tipoDeProductoRoedores;
-        }
-
-        public void SetTipoDeProductoRoedores(string tipoDeProductoRoedores)
-        {
-            this.tipoDeProductoRoedores = tipoDeProductoRoedores;
-        }
 
         public string InfoProductoRoedores()
 		{
-            string info = $"Tipo de producto: {tipoDeProductoRoedores}";
+            string info = $"Tipo de producto: {tipoDeProducto}";
             return info;
         }
 

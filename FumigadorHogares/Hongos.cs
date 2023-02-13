@@ -3,33 +3,21 @@ namespace FumigadorHogares
 {
     public class Hongos : Fumigador, IHongos
     {
-        private string tipoDeProductoHongos;
 
         public Hongos() : base()
         {
-            tipoDeProductoHongos = "";
         }
 
         public Hongos(string tipoDePlaga, bool obtuvoFumigacion, string tipoDeProductoHongos)
         {
             this.tipoDePlaga = tipoDePlaga;
             this.obtuvoFumigacion = obtuvoFumigacion;
-            this.tipoDeProductoHongos = tipoDeProductoHongos;
-        }
-
-        public string GetTipoDeProductoHongos()
-        {
-            return tipoDeProductoHongos;
-        }
-
-        public void SetTipoDeProductoHongos(string tipoDeProductoHongos)
-        {
-            this.tipoDeProductoHongos = tipoDeProductoHongos;
+            this.tipoDeProducto = tipoDeProductoHongos;
         }
 
         public string InfoProductoHongos()
         {
-            string info = $"Tipo de producto: {tipoDeProductoHongos}";
+            string info = $"Tipo de producto: {tipoDeProducto}";
             return info;
         }
 
