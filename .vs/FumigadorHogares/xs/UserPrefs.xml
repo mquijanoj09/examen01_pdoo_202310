@@ -1,15 +1,19 @@
 ﻿<Properties StartupConfiguration="{ECEF01C9-0A67-4CFF-9E70-0201B812FEE7}|Default">
+  <MonoDevelop.Ide.ItemProperties.FumigadorHogares PreferredExecutionTarget="MonoDevelop.Default" />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="FumigadorHogares/Fabrica.cs">
     <Files>
-      <File FileName="FumigadorHogares/Program.cs" Line="27" Column="19" />
-      <File FileName="FumigadorHogares/Fumigador.cs" Line="39" Column="10" />
+      <File FileName="FumigadorHogares/Program.cs" Line="47" Column="1" />
+      <File FileName="FumigadorHogares/Fumigador.cs" Line="27" Column="10" />
       <File FileName="FumigadorHogares/IRoedores.cs" Line="10" Column="1" />
-      <File FileName="FumigadorHogares/Roedores.cs" Line="30" Column="43" />
-      <File FileName="FumigadorHogares/IInsectos.cs" />
-      <File FileName="FumigadorHogares/Insectos.cs" />
-      <File FileName="FumigadorHogares/IHongos.cs" />
-      <File FileName="FumigadorHogares/Hongos.cs" />
-      <File FileName="FumigadorHogares/Fabrica.cs" Line="152" Column="1" />
+      <File FileName="FumigadorHogares/Roedores.cs" Line="9" Column="66" />
+      <File FileName="FumigadorHogares/IInsectos.cs" Line="1" Column="1" />
+      <File FileName="FumigadorHogares/Insectos.cs" Line="22" Column="1" />
+      <File FileName="FumigadorHogares/IHongos.cs" Line="1" Column="1" />
+      <File FileName="FumigadorHogares/Hongos.cs" Line="20" Column="62" />
+      <File FileName="FumigadorHogares/Fabrica.cs" Line="222" Column="30" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -24,10 +28,6 @@
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.FumigadorHogares PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
